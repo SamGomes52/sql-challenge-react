@@ -12,13 +12,26 @@ const db = mysql.createPool({
     database: "sql_challenge"
 })
 
+app.use(cors());
+app.use(express.json());
 
+app.post("/consultar", (req, resp) => {
+    const { consultaUsuario } = req.body;
+
+    let SQL = consultaUsuario;
+
+    db.query(SQL, (err, result) => {
+        console.log(err);
+        resp.send(result);
+    })
+})
 
 app.get('/', (req, resp) => {
-    let SQL = "INSERT INTO PONTOS_DE_ONIBUS (BAIRRO, PASSAGENS_DIARIAS_ONIBUS) VALUES ('Jardim Oliveiras', 77);";
+    let SQL = "SELECT * FROM PONTOS_DE_ONIBUS;";
 
     db.query(SQL, (erro, resultado) => {
         console.log(erro);
+        resp.send(resultado);
     })
 })
 
