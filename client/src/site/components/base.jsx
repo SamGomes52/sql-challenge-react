@@ -13,6 +13,10 @@ function Base(props) {
     setConsulta(event.target.value);
   }
 
+  function limpaConsulta() {
+    setConsulta('');
+  }
+
   function cliqueExecutar() {
     if (consulta !== undefined && consulta !== ' ') {
       Axios.post("http://localhost:3001/consultar", {
@@ -67,18 +71,19 @@ function Base(props) {
                 rows={8}
                 placeholder="Digite seu código SQL aqui..."
                 name="consulta-textarea"
+                value={consulta}
                 onChange={alteraConsulta}
               ></textarea>
             </div>
             <div className="m-3 d-flex justify-content-evenly">
-              <button
+              {/* <button
                 type="button"
                 className="mx-auto btn btn-dark btn-lg"
                 onClick={cliqueExecutar}
               >
                 Executar
-              </button>
-              <button type="button" className="mx-auto btn btn-dark btn-lg">
+              </button> */}
+              <button type="button" className="mx-auto btn btn-dark btn-lg" onClick={limpaConsulta}>
                 Limpar
               </button>
               <button type="button" className="mx-auto btn btn-light btn-lg" onClick={cliqueEnviar}>

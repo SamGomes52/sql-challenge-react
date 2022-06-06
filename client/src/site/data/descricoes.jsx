@@ -14,8 +14,8 @@ const descricoes = [
         <h4 className="ms-2">Nível 1</h4>
         <div className="m-2">
           Nosso ponto de partida é a Cidade da Mobilidade, onde existem diversos
-          pontos de ônibus por onde os ônibus passam. O seu objetivo é retornar o nome do bairro onde está a parada
-          menos movimentada, isto é, a parada onde menos ônibus passam em um
+          pontos de ônibus por onde os ônibus passam. O seu objetivo é retornar o nome do bairro onde está o ponto de ônibus
+          menos movimentado, isto é, onde há a menor quantidade de passagens de ônibus por
           dia!
         </div>
       </div>
