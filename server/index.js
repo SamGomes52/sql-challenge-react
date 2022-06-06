@@ -7,8 +7,8 @@ const cors = require("cors");
 
 const db = mysql.createPool({
     host: "localhost",
-    user: "root",
-    password: "edgar4notes$%",
+    user: "usuario-leitura",
+    password: "wd79rt",
     database: "sql_challenge"
 })
 
@@ -26,15 +26,19 @@ app.post("/consultar", (req, resp) => {
     })
 })
 
-app.get('/', (req, resp) => {
-    let SQL = "SELECT * FROM PONTOS_DE_ONIBUS;";
+app.post("/respostas", (req, resp) => {
+    const { nivel } = req.body;
 
-    db.query(SQL, (erro, resultado) => {
-        console.log(erro);
-        resp.send(resultado);
+    console.log(nivel);
+
+    let SQL = "SELECT RESPOSTA FROM RESPOSTAS_CORRETAS WHERE NIVEL="+nivel;
+
+    db.query(SQL, (err, result) => {
+        console.log(err);
+        resp.send(result);
     })
 })
 
 app.listen(3001, () => {
-    console.log("rodando servidor");
+    console.log("executando servidor");
 })
