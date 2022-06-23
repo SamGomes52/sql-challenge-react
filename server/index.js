@@ -12,6 +12,13 @@ const db = mysql.createPool({
     database: "sql_challenge"
 })
 
+const db2 = mysql.createPool({
+    host: "localhost",
+    user: "somente-leitura-respostas",
+    password: "faxk94q",
+    database: "respostas"
+})
+
 app.use(cors());
 app.use(express.json());
 
@@ -31,10 +38,11 @@ app.post("/respostas", (req, resp) => {
 
     console.log(nivel);
 
-    let SQL = "SELECT RESPOSTA FROM RESPOSTAS_CORRETAS WHERE NIVEL="+nivel;
+    let SQL = "SELECT RESPOSTA FROM RESPOSTAS WHERE NIVEL="+nivel;
 
-    db.query(SQL, (err, result) => {
+    db2.query(SQL, (err, result) => {
         console.log(err);
+        console.log(result);
         resp.send(result);
     })
 })

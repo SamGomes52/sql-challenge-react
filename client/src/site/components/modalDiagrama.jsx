@@ -26,7 +26,7 @@ function ModalDiagrama(props) {
                 ></button>
               </div>
               <div className="modal-body d-flex justify-content-center">
-                  <img src={props.imagemdiagrama}></img>
+                  <img src={props.imagemdiagrama} className="img-fluid"></img>
               </div>
               <div className="modal-footer">
                 <button

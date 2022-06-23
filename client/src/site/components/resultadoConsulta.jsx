@@ -4,18 +4,20 @@ function ResultadoConsulta (props) {
     
 
     try {
-        var resposta;
-        if (props.resultadoEhCerto) {
-            resposta = "Resposta correta!"
-        } else {
-            resposta = "Resposta errada!"
+        var resposta = '';
+        if (props.respostaEnviada) {
+            if (props.resultadoEhCerto) {
+                resposta = <h5 className="fonte-verde">Resposta correta!</h5>
+            } else {
+                resposta = <h5 className="fonte-vermelha">Resposta errada!</h5>
+            }
         }
         
         if (props.resultadoConsulta != undefined) {
-            return (<div>{props.resultadoConsulta?.map((resultadoLinha) => <div>{JSON.stringify(resultadoLinha)}</div>)}<h5>{resposta}</h5></div>);
+            return (<div>{resposta}{props.resultadoConsulta?.map((resultadoLinha, index) => <div key={index}>{JSON.stringify(resultadoLinha)}</div>)}</div>);
         }
     } catch (error) {
-        return <div><h5>Erro: operação inválida!</h5></div>
+        return <div><h5>Erro: consulta inválida!</h5></div>
     } 
 
 }

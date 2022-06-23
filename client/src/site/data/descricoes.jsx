@@ -5,18 +5,14 @@ const descricoes = [
     descricao: (
       <div>
         <div className="m-2">
-          Você perdeu uma mala em uma estação de trem e tem a chance de
-          encontrá-la. Para isso, foram disponibilizadas informações em um banco
-          de dados que vão te ajudar a achá-la. Tudo o que precisa fazer, são as
-          pesquisas corretas. Não se esqueça de verificar o diagrama com a
-          estrutura das tabelas em cada nível!
+          Você recebeu um convite para encontrar algumas informações sobre os transportes de uma determinada cidade. Para isso, 
+          precisa fazer as consultas certas no banco de dados que foi disponibilizado para você. Não se esqueça de consultar a 
+          estrutura do banco em "Ver Diagrama", em cada nível. Considere que o sisterma gerenciador é o MySQL. Boa sorte!
         </div>
         <h4 className="ms-2">Nível 1</h4>
         <div className="m-2">
-          Nosso ponto de partida é a Cidade da Mobilidade, onde existem diversos
-          pontos de ônibus por onde os ônibus passam. O seu objetivo é retornar o nome do bairro onde está o ponto de ônibus
-          menos movimentado, isto é, onde há a menor quantidade de passagens de ônibus por
-          dia!
+          O seu ponto de partida é retornar o nome de todos os bairros da nossa cidade. Lembre-se que queremos somente o nome do 
+          bairro!
         </div>
       </div>
     ),
@@ -28,10 +24,7 @@ const descricoes = [
       <div>
         <h4 className="ms-2">Nível 2</h4>
         <div className="m-2">
-          Ao chegar na parada de ônibus menos movimentada, você encontra
-          instruções que te levam à estação de metrô mais próxima, a estação F4.
-          Agora, é preciso encontrar a estação com o maior volume de passageiros
-          por dia.
+          Agora, o que você precisa fazer é retornar o nome dos bairros que possuem pontos de ônibus.
         </div>
       </div>
     ),
@@ -43,9 +36,8 @@ const descricoes = [
       <div>
         <h4 className="ms-2">Nível 3</h4>
         <div className="m-2">
-          Agora que você descobriu a estação mais movimentada, é preciso
-          descobrir qual o horário em que mais passageiros têm essa estação como
-          destino final.
+          Retorne o nome do bairro que tem o ponto de ônibus mais movimentado, ou seja, com o maior número de passagens
+          diárias.
         </div>
       </div>
     ),
@@ -57,9 +49,8 @@ const descricoes = [
       <div>
         <h4 className="ms-2">Nível 4</h4>
         <div className="m-2">
-          Ao descobrir qual o horário que mais passageiros desembarcam nesta
-          estação, agora é necessário descobrir quantos deles têm como origem a
-          estação onde iniciamos as nossas buscas, a estação F4.
+          Ao descobrir o bairro com ponto de ônibus mais movimentado, selecione a estação desse bairro que tem
+          a menor quantidade de passageiros por dia. Lembre-se, somando todas as linhas que passam nessa estação!
         </div>
       </div>
     ),
@@ -71,11 +62,9 @@ const descricoes = [
       <div>
         <h4 className="ms-2">Nível 5</h4>
         <div className="m-2">
-          Por fim, ao descobrir quantos passageiros têm a mesma origem e
-          destino, descubra quantos têm a mesma origem, mas destino diferente e
-          o mesmo destino, mas origem diferente. Dentre esses passageiros,
-          descubra qual a estação que todos eles passaram no meio do caminho,
-          entre suas origens e destinos. Lá estará guardada a sua mala!
+          Por fim, na estação encontrada no nível anterior, entre as linhas que passam por ela, retorne o número da linha 
+          que tem origem no bairro encontrado no nível 3 e destino que possui a maior quantidade de passageiros por dia entre
+          as linhas que passam nessa estação.
         </div>
       </div>
     ),

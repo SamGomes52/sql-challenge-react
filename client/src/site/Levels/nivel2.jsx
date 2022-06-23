@@ -7,7 +7,7 @@ function Nivel2() {
   return (
     <div>
         <Menu />
-        <Base descricao={descricoes[1]}/>
+        <Base descricao={descricoes[1]} nivel="2"/>
     </div>
   );
 }

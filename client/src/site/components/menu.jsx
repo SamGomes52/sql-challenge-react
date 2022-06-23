@@ -5,7 +5,7 @@ function Menu() {
   return (
     <nav className="navbar navbar-expand-md navbar-light verde bg-gradient">
       <div className="container">
-        <a className="navbar-brand text-white" href="/#">
+        <a className="navbar-brand text-white fonte-titulo" href="/#">
           SQL Challenge
         </a>
         <button

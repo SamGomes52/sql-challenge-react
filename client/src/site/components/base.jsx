@@ -8,6 +8,7 @@ function Base(props) {
   const [resultadoConsulta, setResultadoConsulta] = useState();
   const [respostaCorreta, setRespostaCorreta] = useState();
   const [resultadoEhCerto, setResultadoEhCerto] = useState();
+  const [respostaEnviada, setrespostaEnviada] = useState(false);
 
   function alteraConsulta(event) {
     setConsulta(event.target.value);
@@ -26,6 +27,7 @@ function Base(props) {
         setResultadoConsulta(resp.data);
       });
     }
+    setrespostaEnviada(false);
   }
 
   function cliqueEnviar(event) {
@@ -38,11 +40,7 @@ function Base(props) {
         setRespostaCorreta(resp.data[0]['RESPOSTA']);
       });
       setResultadoEhCerto(respostaCorreta == JSON.stringify(resultadoConsulta));
-      // if (resultadoEhCerto) {
-      //   alert("Resposta certa!!");
-      // } else {
-      //   alert("Resposta errada!!");
-      // }
+      setrespostaEnviada(true);
     }
   }
 
@@ -63,7 +61,7 @@ function Base(props) {
                 Ver Diagrama
               </button>
 
-              <ModalDiagrama imagemdiagrama="/images/diagrama_nivel_1.png" />
+              <ModalDiagrama imagemdiagrama="/images/esquema-sql-challenge.png" />
             </div>
             <div className="m-1">
               <textarea
@@ -76,13 +74,13 @@ function Base(props) {
               ></textarea>
             </div>
             <div className="m-3 d-flex justify-content-evenly">
-              {/* <button
+              <button
                 type="button"
                 className="mx-auto btn btn-dark btn-lg"
                 onClick={cliqueExecutar}
               >
                 Executar
-              </button> */}
+              </button>
               <button type="button" className="mx-auto btn btn-dark btn-lg" onClick={limpaConsulta}>
                 Limpar
               </button>
@@ -95,7 +93,7 @@ function Base(props) {
           <div className="col-lg-6 bg-light p-2">
             <h1 className="d-flex justify-content-center">Resultado da consulta</h1>
             <div id="resultados-consulta">
-              <ResultadoConsulta resultadoConsulta={resultadoConsulta} resultadoEhCerto={respostaCorreta == JSON.stringify(resultadoConsulta)}/>
+              <ResultadoConsulta resultadoConsulta={resultadoConsulta} resultadoEhCerto={respostaCorreta == JSON.stringify(resultadoConsulta)} respostaEnviada={respostaEnviada}/>
             </div>
           </div>
 

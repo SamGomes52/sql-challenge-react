@@ -3,5 +3,18 @@
 }
 
 .verde {
-    background-color: rgb(27, 94, 53);
+    background-color: rgb(27, 94, 83);
+}
+
+.fonte-titulo {
+    font-family: 'Caveat', cursive;
+    font-size: xx-large;
+}
+
+.fonte-vermelha {
+    color: red;
+}
+
+.fonte-verde {
+    color: green;
 }
