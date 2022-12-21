@@ -71,6 +71,7 @@ function Base(props) {
                 name="consulta-textarea"
                 value={consulta}
                 onChange={alteraConsulta}
+                spellcheck="false"
               ></textarea>
             </div>
             <div className="m-3 d-flex justify-content-evenly">
@@ -90,7 +91,7 @@ function Base(props) {
             </div>
           </div>
 
-          <div className="col-lg-6 bg-light p-2">
+          <div className="col-lg-6 fundo-resultados p-2">
             <h1 className="d-flex justify-content-center">Resultado da consulta</h1>
             <div id="resultados-consulta">
               <ResultadoConsulta resultadoConsulta={resultadoConsulta} resultadoEhCerto={respostaCorreta == JSON.stringify(resultadoConsulta)} respostaEnviada={respostaEnviada}/>

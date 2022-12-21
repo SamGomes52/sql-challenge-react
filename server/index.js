@@ -28,6 +28,7 @@ app.post("/consultar", (req, resp) => {
     let SQL = consultaUsuario;
 
     db.query(SQL, (err, result) => {
+        console.log(req);
         console.log(err);
         resp.send(result);
     })

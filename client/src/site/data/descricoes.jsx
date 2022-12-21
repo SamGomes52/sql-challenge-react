@@ -49,8 +49,10 @@ const descricoes = [
       <div>
         <h4 className="ms-2">Nível 4</h4>
         <div className="m-2">
-          Ao descobrir o bairro com ponto de ônibus mais movimentado, selecione a estação desse bairro que tem
-          a menor quantidade de passageiros por dia. Lembre-se, somando todas as linhas que passam nessa estação!
+          Ao descobrir o bairro com ponto de ônibus mais movimentado, selecione o código das estações de metrô desse bairro e a
+          soma da quantidade de passageiros que passam em cada uma dessas estacões (defina um apelido para 
+          essa soma igual a "passageiros"). Lembre-se de agrupar essa soma por estação 
+          de metrô!
         </div>
       </div>
     ),
@@ -62,9 +64,8 @@ const descricoes = [
       <div>
         <h4 className="ms-2">Nível 5</h4>
         <div className="m-2">
-          Por fim, na estação encontrada no nível anterior, entre as linhas que passam por ela, retorne o número da linha 
-          que tem origem no bairro encontrado no nível 3 e destino que possui a maior quantidade de passageiros por dia entre
-          as linhas que passam nessa estação.
+          Por fim, selecione os nomes dos bairros que são destino final de alguma linha e que comecem com a 
+          letra "M";
         </div>
       </div>
     ),
