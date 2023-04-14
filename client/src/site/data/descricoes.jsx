@@ -11,7 +11,7 @@ const descricoes = [
         </div>
         <h4 className="ms-2">Nível 1</h4>
         <div className="m-2">
-          O seu ponto de partida é retornar o nome de todos os bairros da nossa cidade. Lembre-se que queremos somente o nome do 
+          O seu ponto de partida é retornar o nome de todos os bairros da cidade. Lembre-se que queremos somente o nome do 
           bairro!
         </div>
       </div>
