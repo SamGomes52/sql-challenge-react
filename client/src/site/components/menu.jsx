@@ -1,5 +1,7 @@
 import React from "react";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
+
+const niveis = [1, 2, 3, 4, 5];
 
 function Menu() {
   return (
@@ -21,31 +23,17 @@ function Menu() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav">
-            <li className="nav-item">
-              <Link className="nav-link text-white" to="/">
-                Nível 1
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link text-white" to="/nivel2">
-                Nível 2
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link text-white" to="/nivel3">
-                Nível 3
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link text-white" to="/nivel4">
-                Nível 4
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link text-white" to="/nivel5">
-                Nível 5
-              </Link>
-            </li>
+            {niveis.map((nivel, index) => {
+              let numNivel = "/nivel" + nivel;
+              numNivel = numNivel === "/nivel1" ? "/" : numNivel;
+              return (
+                <li className="nav-item" key={index}>
+                  <Link className="nav-link text-white" to={numNivel}>
+                    Nível {nivel}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>

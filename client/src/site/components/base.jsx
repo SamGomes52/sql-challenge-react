@@ -39,7 +39,7 @@ function Base(props) {
         console.log("Resposta certa: " + resp.data[0]['RESPOSTA']);
         setRespostaCorreta(resp.data[0]['RESPOSTA']);
       });
-      setResultadoEhCerto(respostaCorreta == JSON.stringify(resultadoConsulta));
+      setResultadoEhCerto(respostaCorreta === JSON.stringify(resultadoConsulta));
       setrespostaEnviada(true);
     }
   }
@@ -71,7 +71,7 @@ function Base(props) {
                 name="consulta-textarea"
                 value={consulta}
                 onChange={alteraConsulta}
-                spellcheck="false"
+                spellCheck="false"
               ></textarea>
             </div>
             <div className="m-3 d-flex justify-content-evenly">
@@ -94,7 +94,7 @@ function Base(props) {
           <div className="col-lg-6 fundo-resultados p-2">
             <h1 className="d-flex justify-content-center">Resultado da consulta</h1>
             <div id="resultados-consulta">
-              <ResultadoConsulta resultadoConsulta={resultadoConsulta} resultadoEhCerto={respostaCorreta == JSON.stringify(resultadoConsulta)} respostaEnviada={respostaEnviada}/>
+              <ResultadoConsulta resultadoConsulta={resultadoConsulta} resultadoEhCerto={respostaCorreta === JSON.stringify(resultadoConsulta)} respostaEnviada={respostaEnviada}/>
             </div>
           </div>
 
