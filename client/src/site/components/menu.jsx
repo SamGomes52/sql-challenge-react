@@ -1,15 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import styled from "styled-components"
+
+const NavContainer = styled.nav`
+  background-color: rgb(27, 94, 83);
+`
+
+const LogoContainer = styled.a`
+  font-family: 'Caveat', cursive;
+  font-size: xx-large;
+`
 
 const niveis = [1, 2, 3, 4, 5];
 
 function Menu() {
   return (
-    <nav className="navbar navbar-expand-md navbar-light verde bg-gradient">
+    <NavContainer className="navbar navbar-expand-md navbar-light bg-gradient">
       <div className="container">
-        <a className="navbar-brand text-white fonte-titulo" href="/#">
+        <LogoContainer className="navbar-brand text-white" href="/#">
           SQL Challenge
-        </a>
+        </LogoContainer>
         <button
           className="navbar-toggler"
           type="button"
@@ -37,7 +47,7 @@ function Menu() {
           </ul>
         </div>
       </div>
-    </nav>
+    </NavContainer>
   );
 }
 

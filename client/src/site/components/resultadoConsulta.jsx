@@ -1,13 +1,47 @@
 import React from "react";
+import styled from "styled-components";
+
+const Resultados = styled.div`
+  .row {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .row > .col-xs-4 {
+    display: inline-block;
+    float: none;
+  }
+`
+
+const RespostaErrada = styled.h5`
+  color: red;
+`
+
+const RespostaCorreta = styled.h5`
+  color: green;
+`
+
+const CabecalhoTabela = styled.thead`
+  td {
+    font-weight: bold;
+  }
+`
+
+const TableData = styled.td`
+  min-width: 200px;
+  padding: 5px;
+  border: 2px solid rgb(35, 87, 71);
+  text-align: center;
+`
 
 function ResultadoConsulta(props) {
   try {
     var resposta = "";
     if (props.respostaEnviada) {
       if (props.resultadoEhCerto) {
-        resposta = <h5 className="fonte-verde">Resposta correta!</h5>;
+        resposta = <RespostaCorreta>Resposta correta!</RespostaCorreta>;
       } else {
-        resposta = <h5 className="fonte-vermelha">Resposta errada!</h5>;
+        resposta = <RespostaErrada>Resposta errada!</RespostaErrada>;
       }
     }
 
@@ -15,23 +49,23 @@ function ResultadoConsulta(props) {
       var colunasResultado = Object.keys(props.resultadoConsulta[0]);
 
       return (
-        <div className="container resultados">
+        <Resultados className="container">
           <div className="d-flex justify-content-center">{resposta}</div>
             <div className="row">
           <div className="">
           <table>
-            <thead>
+            <CabecalhoTabela>
               <tr>
                 {colunasResultado.map((coluna) => (
-                  <td>{coluna.toUpperCase()}</td>
+                  <TableData>{coluna.toUpperCase()}</TableData>
                 ))}
               </tr>
-            </thead>
+            </CabecalhoTabela>
             <tbody>
               {props.resultadoConsulta?.map((resultadoLinha, index) => (
                 <tr key={index}>
                   {Object.values(resultadoLinha).map((valor) => (
-                    <td>{valor}</td>
+                    <TableData>{valor}</TableData>
                   ))}
                 </tr>
               ))}
@@ -39,7 +73,7 @@ function ResultadoConsulta(props) {
           </table>
           </div>
           </div>
-        </div>
+        </Resultados>
       );
     }
   } catch (error) {

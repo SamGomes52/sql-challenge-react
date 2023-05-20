@@ -2,6 +2,15 @@ import React, { useState } from "react";
 import ModalDiagrama from "./modalDiagrama";
 import Axios from "axios";
 import ResultadoConsulta from "./resultadoConsulta";
+import styled from "styled-components";
+
+const FundoAzul = styled.div`
+  background-color: rgb(56, 132, 134);
+`
+
+const FundoResultados = styled.div`
+  background-color: rgb(168, 197, 197);
+`
 
 function Base(props) {
   const [consulta, setConsulta] = useState();
@@ -49,7 +58,7 @@ function Base(props) {
     <div id="base">
       <div className="container">
         <div className="row min-vh-100">
-          <div className="col-lg-6 azul px-2">
+          <FundoAzul className="col-lg-6 px-2">
             <div className="text-white m-2">{props.descricao.descricao}</div>
             <div className="d-flex justify-content-center m-3">
               <button
@@ -89,14 +98,14 @@ function Base(props) {
                 Enviar
               </button>
             </div>
-          </div>
+          </FundoAzul>
 
-          <div className="col-lg-6 fundo-resultados p-2">
+          <FundoResultados className="col-lg-6 p-2">
             <h1 className="d-flex justify-content-center">Resultado da consulta</h1>
             <div id="resultados-consulta">
               <ResultadoConsulta resultadoConsulta={resultadoConsulta} resultadoEhCerto={respostaCorreta === JSON.stringify(resultadoConsulta)} respostaEnviada={respostaEnviada}/>
             </div>
-          </div>
+          </FundoResultados>
 
         </div>
       </div>
