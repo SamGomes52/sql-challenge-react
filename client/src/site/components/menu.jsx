@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components"
 
 const NavContainer = styled.nav`
-  background-color: rgb(27, 94, 83);
+  background-color: rgb(35, 35, 36);
 `
 
 const LogoContainer = styled.a`
@@ -15,7 +15,7 @@ const niveis = [1, 2, 3, 4, 5];
 
 function Menu() {
   return (
-    <NavContainer className="navbar navbar-expand-md navbar-light bg-gradient">
+    <NavContainer className="navbar navbar-expand-md navbar-light">
       <div className="container">
         <LogoContainer className="navbar-brand text-white" href="/#">
           SQL Challenge
